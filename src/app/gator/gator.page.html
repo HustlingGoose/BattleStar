@@ -1,0 +1,149 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>G.A.T.O.R.</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">G.A.T.O.R.</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-label>
+      <h1>¿Qué es G.A.T.O.R?</h1>
+      <p>Gunnery, Attacker Movement, Target movement, Other y Range.</p>
+      <p>En otras palabras, habilidad de disparo, movimiento del atacante, movimiento del objetivo, otros factores y rango del disparo</p>
+      <p>En resumen, el cálculo de tirada de disparo, cuanto necesitas obtener en los dados para acertar.</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <h2>G Gunnery Skill</h2>
+      <p>Habilidad de disparo del piloto, se puede cambiar pero lo estándar es 4, esta es la base en puntos para acertar.</p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <h2>A Attacker Movement</h2>
+      <p>Movimiento del atacante, la pieza que dispara es el atacante.</p>
+      <p>Caminar +1</p>
+      <p>Correr +2</p>
+      <p>Saltar +3</p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <h2>Target movement</h2>
+      <p>Movimiento del objetivo, dependiendo de cuanto haya movido en hexagonos.</p>
+      <p>De 0 a 2 +0</p>
+      <p>De 3 a 4 +1</p>
+      <p>De 5 a 6 +2</p>
+      <p>De 7 a 9 +3</p>
+      <p>10 o más +4</p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <h2>Other</h2>
+      <p>"Otros factores", obstáculos, bosques, agua, cobertura</p>
+      <p>Por nivel de altura +1</p>
+      <p>Por nivel de agua +1</p>
+      <p>Bosque disperso +1</p>
+      <p>Bosque denso +2</p>
+      <p>Si hay dos niveles de altura de diferencia (hacía arriba) el objetivo no es visible.</p>
+      <p>Si hay dos bosques densos o tres bosques dispersos en la línea de visión frente al objetivo, no se puede efectuar el disparo</p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <h2>Range</h2>
+      <p>Rango, distancia, se especifica por arma</p>
+      <p>Corta +0</p>
+      <p>Media +2</p>
+      <p>Larga +4</p>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <h2>Modificación final</h2>
+      <p>Resultado del cálculo, el total de cuánto necesitas para acertar</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Calculador G.A.T.O.R.</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-input label="Habilidad de diparo" placeholder="4" [(ngModel)]="G" type="number"></ion-input>
+
+      <p></p>
+      <ion-label>Movimiento del atacante</ion-label>
+      <p></p>
+      <ion-button color="tertiary" (click)="movimientoA1()">Quieto</ion-button>
+      <ion-button color="success" (click)="movimientoA2()">Caminar</ion-button>
+      <ion-button color="warning" (click)="movimientoA3()">Correr</ion-button>
+      <ion-button color="danger" (click)="movimientoA4()">Saltar</ion-button>
+
+      <p></p>
+      <ion-label>Movimiento del objetivo</ion-label>
+      <p></p>
+      <ion-button color="success" (click)="movimientoT1()">0 - 2</ion-button>
+      <ion-button color="secondary" (click)="movimientoT2()">3 - 4</ion-button>
+      <ion-button color="tertiary" (click)="movimientoT3()">5 - 6</ion-button>
+      <ion-button color="warning" (click)="movimientoT4()">7 - 9</ion-button>
+      <ion-button color="danger" (click)="movimientoT5()">10 o mas</ion-button>
+
+      <p></p>
+      <ion-input label="Otros factores" placeholder="0" [(ngModel)]="O" type="number"></ion-input>
+
+      <p></p>
+      <ion-label>Rango</ion-label>
+      <p></p>
+      <ion-button color="success" (click)="rangocorto()">Corto</ion-button>
+      <ion-button color="warning" (click)="rangomedio()">Medio</ion-button>
+      <ion-button color="danger" (click)="rangolargo()">Largo</ion-button>
+
+      <p></p>
+      <ion-button (click)="calculo($event)" expand="block" color="success"></ion-button>
+
+      <ion-item>
+      <h1 color="success">Modificador final: {{G+A+T+O+R}}</h1>
+      </ion-item>
+      
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>
+      <h1>Diagrama de ubicaciones</h1>
+    </ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Transferencia de daños y ubicaciones de impacto</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+    <p>Azul: Izquierdo (Avanzado)</p>
+    <p>Rojo: Derecho (Avanzado)</p>
+    <p>Verde: General, puntuaciones de ubicación estándar</p>
+    <p>El diagrama muestra la transferencia de daño para cuando no quede más armadura</p>
+    <img alt="d6s" src="../../assets/img/hit loc table.png" />
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

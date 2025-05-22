@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon (click)='regreso()' name="arrow-back-outline"></ion-icon>
+    <ion-title>Detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Detalle</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>ID: {{Us.id_usuario}}</ion-card-title>
+      <ion-card-subtitle>Nombre: {{Us.nombre_usuario}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-label>Password: {{Us.passw}}</ion-label><br>
+      <ion-label>Tipo: {{Us.tipo_usuario}}</ion-label><br>
+      <ion-label>Nivel: {{Us.nivel_usuario}}</ion-label><br>
+      <br>
+      <ion-button  id="Modificar" color="success" [routerLink]="['/modificar-usuario',Us.id_usuario]">Modificar</ion-button><ion-button [routerLink]="['/borrar-usuario',Us.id_usuario]" id="eliminar" color="danger">Eliminar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

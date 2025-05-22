@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Movimiento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Move</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>Movimiento</ion-card-title>
+      <ion-card-subtitle>Lo básico</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>Moverte evitará daños</p>
+      <br>
+      <p>Dado el sistema de juego (las unidades mueven como tanques) hay dos tipos de movimiento principales:</p><br>
+      <p>Avance/Retroceso: Consiste en ir al frente o hacía atrás</p><br>
+      
+      <p>Encaramiento:     La acción de girar, se llama encaramiento ya que mueves para encarar un lado del hexagono en el que estas parado</p>
+      <p>Un encaramiento consume un punto de movimiento, avanzar o retroceder también consumen puntos de movimiento por hexagono</p><br>
+      
+      <p>Es posible que el terreno afecte al movimiento volviendolo más demandante en puntos, estos terrenos son visibles en el mapa</p>
+    </ion-card-content>
+  </ion-card>
+  
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>Movimiento</ion-card-title>
+      <ion-card-subtitle>Modificadores</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <h2>Modificadores de movimiento</h2><br>
+      <p>Terreno dificil/escombros = +2 al costo por hexagono</p><br>
+      <p>Subir un nivel de terreno = +1 al costo por hexagono</p><br>
+      <p>Bosque disperso           = +1 al costo por hexagono</p><br>
+      <p>Bosque denso              = +2 al costo por hexagono</p><br>
+      <p></p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>Movimiento</ion-card-title>
+      <ion-card-subtitle>Tipos</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>Caminar: Movimiento básico, la unidad puede mover el numero de puntos de movimiento especificado en la hoja de control</p><br>
+      <p>Correr:  Movimiento rápido, hay más puntos disponibles pero vuelve más díficil disparar</p><br>
+      <p>Saltar:  Movimiento especial que no toda unidad puede realizar, permite alcanzar altura sin costos adicionales y con reglas avanzadas ataques cuerpo a cuerpo</p><br>
+      <p></p>
+      <img alt="mov" src="../../assets/img/beginner sheet.png" />
+      <p></p>
+    </ion-card-content>
+  </ion-card>
+      
+  <ion-item>
+    <ion-label>
+      <h1>Defensa</h1>
+      <h2>Defensa por movimiento</h2>
+      <p>Dependiendo de cuanto hayas movido en hexagonos, es más dificil acertar si eres el objetivo de un ataque</p><br>
+      <p>De 0 a 2 +0 al modificador de disparo</p><br>
+      <p>De 3 a 4 +1 al modificador de disparo</p><br>
+      <p>De 5 a 6 +2 al modificador de disparo</p><br>
+      <p>De 7 a 9 +3 al modificador de disparo</p><br>
+      <p>10 o más +4 al modificador de disparo</p><br>
+
+    </ion-label>
+  </ion-item>
+
+
+</ion-content>

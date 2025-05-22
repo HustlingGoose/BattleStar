@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon (click)='regreso()' name="arrow-back-outline"></ion-icon>
+    <ion-title>Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Menu de Administrador</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <br>
+  <ion-label>Bienvenido Administrador</ion-label><br>
+  <br>
+  <ion-label>¿Que desea revisar?</ion-label>
+  <br>
+  <ion-button (click)='listado()' expand="full">Usuarios Registrados</ion-button>
+</ion-content>

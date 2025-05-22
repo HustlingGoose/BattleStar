@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon (click)='regreso()' name="arrow-back-outline"></ion-icon>
+    <ion-title>nuevo-usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">nuevo-usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form>
+    <ion-item lines="full">
+      <ion-input [(ngModel)]="Us.id_usuario" label="ID" type="number" name="txtID" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-input [(ngModel)]="Us.nombre_usuario"  label="Nombre" type="text" name="txtNombre" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-input [(ngModel)]="Us.passw" label="Contraseña" type="text" name="txtAutor" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-select [(ngModel)]="Us.tipo_usuario" label="Tipo" placeholder="Tipo de Usuario" name="txtTipo"  type="text" required>
+        <ion-select-option value="Admin">Admin</ion-select-option>
+        <ion-select-option value="Usuario">Usuario</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-select [(ngModel)]="Us.nivel_usuario" label="Nivel" placeholder="Tipo de Usuario" name="txtTipo"  type="text" required>
+        <ion-select-option value="Novato">Novato</ion-select-option>
+        <ion-select-option value="Medio">Medio</ion-select-option>
+        <ion-select-option value="Habil">Habil</ion-select-option>
+        <ion-select-option value="Avanzado">Avanzado</ion-select-option>
+        <ion-select-option value="Experto">Experto</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-row lines="full">
+    <ion-col>
+      <ion-button  (click)="nuevoUsuario()" expand="block" color="success">Agregar</ion-button>
+      <ion-button  (click)="obtenerIDActual()" expand="block" color="warning">Cargar ID</ion-button>
+      <ion-button  (click)="regreso()" expand="block" color="danger">Cancelar</ion-button>
+    </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>

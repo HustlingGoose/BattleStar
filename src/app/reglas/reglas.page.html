@@ -1,0 +1,163 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Reglas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Reglas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngIf="showGeneralidades">
+    <ion-card-header>
+      <ion-card-title>Generalidades</ion-card-title>
+      <ion-card-subtitle>Contadores</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Cualquier cosa de tamaño apropiado puede representar a una unidad, sea una miniatura o un token.
+      <img alt="Contadores" src="../../assets/img/minis.png" />
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showGeneralidades">
+    <ion-card-header>
+      <ion-card-title>Generalidades</ion-card-title>
+      <ion-card-subtitle>Hojas de control</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Las hojas de control cuentan con diagramas y registros de cada unidad, a su vez cuenta con indicaciones para transferencia de daños una vez que se sobrepasan los "puntos de armadura" de una pieza.<br>
+      cada unidad tiene sus propias características, desde los puntos de armadura hasta las armas disponibles y los chasis (entiendase chasis como la forma del mech).
+      <img alt="hojacontrol" src="../../assets/img/beginner sheet.png" />
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showGeneralidades">
+    <ion-card-header>
+      <ion-card-title>Generalidades</ion-card-title>
+      <ion-card-subtitle>Mapas</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Los mapas para jugar están divididos en hexagonos, indicando claramente hacía donde encara cada unidad, usualmente miden 22 pulgadas por 18 pulgadas, los mapas a su vez son modulares, puedes ponerlos lado a lado sin problemas.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showGeneralidades">
+    <ion-card-header>
+      <ion-card-title>Generalidades</ion-card-title>
+      <ion-card-subtitle>Dados</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Battletech se juega usando dados de 6 caras, se recomienda tener al menos 4 colores de dado disponibles.<br>
+      3 colores para indicar los tipos de movimiento (esto se explica más adelante), 3 dados por unidad.<br>
+      (Simple recomendación)<br>
+      Rojo indicando el movimiento de correr<br>
+      Azul indicando el movimiento de caminar<br>
+      Blanco inicando el movimiento de saltar<br>
+      1 color para chequeos (tiradas de disparo, balance, etc.), se pueden tener solo dos, o un par por jugador.
+      <img alt="d6s" src="../../assets/img/d6s.png" />
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showFases">
+    <ion-card-header>
+      <ion-card-title>Fases</ion-card-title>
+      <ion-card-subtitle>Iniciativa</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Esta fase es realmente simple, ambos equipos tiran 2 dados de 6 caras y aquel con la puntuación más baja mueve sus piezas primero, parece confuso en primera instancia, pero le permite mejor posicionamiento al ganador de la fase.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showFases">
+    <ion-card-header>
+      <ion-card-title>Fases</ion-card-title>
+      <ion-card-subtitle>Movimiento</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      En esta fase los jugadores se van turnando para mover sus piezas, eligiendo que tipo de movimiento va a tomar cada pieza (caminar, correr, saltar), cada uno con un número de puntos de movimiento determinado para después colocar los dados de color ya mencionados a modo de indicar el movimiento y defensa (la defensa se detalla en la siguiente sección).
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showFases">
+    <ion-card-header>
+      <ion-card-title>Fases</ion-card-title>
+      <ion-card-subtitle>Movimiento en terreno no despejado</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Mover en terreno no despejado es más caro en puntos naturalmente.<br>
+      Bosque ligero -1<br>
+      Bosque denso -2 <br>
+      Terreno díficil -2 <br>
+      Subir un nivel de altura -2 <br>
+      Bajar un nivel de altura tiene un costo normal <br>
+      El terreno dificíl se puede entender como ruinas, escombros, o similares.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showFases">
+    <ion-card-header>
+      <ion-card-title>Fases</ion-card-title>
+      <ion-card-subtitle>Ataque</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Esta fase consiste en primero verificar si hay piezas en rango de ataque, después se declara con que armas se va a disparar y se realiza una tirada por arma.<br>
+      Cada arma tiene sus valores de alcance, daño, reglas especiales, y cantidad por lo que cada tirada de disparo tiene un objetivo en puntos distinto, esto se mide con "G.A.T.O.R.".
+      <p></p>
+      <p>Es posible encontrar terreno que impida la visión o dificulte los disparos</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showFases">
+    <ion-card-header>
+      <ion-card-title>Fases</ion-card-title>
+      <ion-card-subtitle>Resolviendo ataques</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Cada tirada de disparo exitosa se resuelve volviendo a tirar los dos dados de 6 caras para saber en donde ha golpeado el disparo, la tabla de resultados está disponible la sección de G.A.T.O.R.
+      <img alt="d6s" src="../../assets/img/hit loc table.png" />
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showFases">
+    <ion-card-header>
+      <ion-card-title>Fases</ion-card-title>
+      <ion-card-subtitle>Fase final</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Fase previa al siguiente ciclo de juego, los daños toman efecto, y las piezas dañadas se enmarcan, ya que en la fase pasada incluso los mechs dañados podían continuar disparando.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="showFases">
+    <ion-card-header>
+      <ion-card-title>Fases</ion-card-title>
+      <ion-card-subtitle>Fase final - Daños</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Se marcan los daños causados y toman efecto, las piezas con daños ya se toman en cuenta como tal.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" color="primary" (click)="toggleFases()">Ver solo Generalidades</ion-button>
+  <ion-button expand="block" color="secondary" (click)="toggleGeneralidades()">Ver solo Fases</ion-button>
+  <ion-button expand="block" color="tertiary" (click)="toggleAll()">Ver todo</ion-button>
+  
+
+</ion-content>
