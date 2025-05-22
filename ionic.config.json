@@ -1,0 +1,7 @@
+{
+  "name": "BattleStar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

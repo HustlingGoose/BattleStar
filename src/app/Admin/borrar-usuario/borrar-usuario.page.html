@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon (click)='regreso()' name="arrow-back-outline"></ion-icon>
+    <ion-title>Eliminar Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Eliminar Registro</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>ID: {{Us.id_usuario}}</ion-card-title>
+      <ion-card-subtitle>¿Está seguro de eliminar a este usuario? {{Us.nombre_usuario}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      
+
+      <ion-row lines="full">
+        <ion-col>
+          <ion-button  (click)="darleCuello()" expand="block" color="success">Eliminar</ion-button>
+        </ion-col>
+        </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
